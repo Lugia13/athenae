@@ -76,3 +76,7 @@ This project intentionally uses small quantized models so that it runs entirely 
 ## License
 
 MIT
+## Author
+
+Oussama Saddati
+Portfolio: oussamasaddati.vercel.app
