@@ -1,6 +1,6 @@
 import sys
 from config import BASE_DIR
-import fitz  # pymupdf
+import pymupdf as fitz
 import os
 from pathlib import Path
 from tqdm import tqdm
