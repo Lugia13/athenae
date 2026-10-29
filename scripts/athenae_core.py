@@ -1,3 +1,4 @@
+from config import BASE_DIR
 import re
 import json
 import subprocess
@@ -5,7 +6,7 @@ import chromadb
 import ollama
 from pathlib import Path
 
-DB_DIR = "/home/skilipi/ai_rag_project/chroma_db"
+DB_DIR = str(BASE_DIR / "chroma_db")
 COLLECTION_NAME = "books"
 EMBED_MODEL = "nomic-embed-text"
 GENERAL_MODEL = "qwen2.5:3b-instruct-q4_K_M"
@@ -31,7 +32,7 @@ class Athenae:
         self.collection = client.get_collection(name=COLLECTION_NAME)
         self.history = []
         self.max_history_turns = 4
-        self.history_file = Path("/home/skilipi/ai_rag_project/chat_history.json")
+        self.history_file = Path(str(BASE_DIR / "chat_history.json"))
         self.load_history()
 
     def save_history(self):
@@ -132,7 +133,7 @@ class Athenae:
     def run_audit(self, path):
         """Returns combined text output of the audit for a single file or directory."""
         result = subprocess.run(
-            ["python3", "/home/skilipi/ai_rag_project/scripts/audit.py", path],
+            ["python3", str(BASE_DIR / "scripts/audit.py"), path],
             capture_output=True, text=True, timeout=300
         )
         return result.stdout + ("\n" + result.stderr if result.stderr else "")

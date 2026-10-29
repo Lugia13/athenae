@@ -1,10 +1,10 @@
-venv/
 audit_venv/
-__pycache__/
-*.pyc
-chroma_db/
-extracted_text/
 chat_history.json
-test_code/
+chroma_db/
 .DS_Store
+extracted_text/
 *.log
+*.pyc
+__pycache__/
+test_code/
+venv/

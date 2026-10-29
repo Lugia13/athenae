@@ -1,3 +1,4 @@
+from config import BASE_DIR
 import os
 import re
 from pathlib import Path
@@ -5,8 +6,8 @@ import chromadb
 import ollama
 from tqdm import tqdm
 
-TEXT_DIR = "/home/skilipi/ai_rag_project/extracted_text"
-DB_DIR = "/home/skilipi/ai_rag_project/chroma_db"
+TEXT_DIR = str(BASE_DIR / "extracted_text")
+DB_DIR = str(BASE_DIR / "chroma_db")
 COLLECTION_NAME = "books"
 EMBED_MODEL = "nomic-embed-text"
 

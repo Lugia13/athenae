@@ -34,7 +34,7 @@ Python 3.11 or newer, Ollama for running local language models, and the Python p
 
 Clone the repository and create a virtual environment.
 
-git clone YOUR_REPO_URL
+git clone https://github.com/Lugia13/athenae.git
 cd athenae
 python3 -m venv venv
 source venv/bin/activate
@@ -50,7 +50,7 @@ Create a second isolated environment for the code auditing tools to avoid depend
 
 python3 -m venv audit_venv
 source audit_venv/bin/activate
-pip install bandit semgrep ruff
+pip install bandit ruff
 deactivate
 
 ## Usage

@@ -1,9 +1,10 @@
+from config import BASE_DIR
 import subprocess
 import sys
 import json
 import ollama
 
-AUDIT_PYTHON = "/home/skilipi/ai_rag_project/audit_venv/bin/python3"
+AUDIT_PYTHON = str(BASE_DIR / "audit_venv/bin/python3")
 CODER_MODEL = "qwen2.5-coder:3b-instruct-q4_K_M"
 
 def run_bandit(path):

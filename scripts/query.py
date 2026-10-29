@@ -1,8 +1,9 @@
+from config import BASE_DIR
 import re
 import chromadb
 import ollama
 
-DB_DIR = "/home/skilipi/ai_rag_project/chroma_db"
+DB_DIR = str(BASE_DIR / "chroma_db")
 COLLECTION_NAME = "books"
 EMBED_MODEL = "nomic-embed-text"
 GENERAL_MODEL = "qwen2.5:3b-instruct-q4_K_M"
@@ -78,7 +79,7 @@ def main():
             import subprocess
             target = query[6:].strip()
             print(f"\n[Running audit on {target} ...]\n")
-            subprocess.run(["python3", "/home/skilipi/ai_rag_project/scripts/audit.py", target])
+            subprocess.run(["python3", str(BASE_DIR / "scripts/audit.py"), target])
             continue
 
         calc_result = try_calculate(query)

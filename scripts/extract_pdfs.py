@@ -1,10 +1,12 @@
+import sys
+from config import BASE_DIR
 import fitz  # pymupdf
 import os
 from pathlib import Path
 from tqdm import tqdm
 
-BOOKS_DIR = "/home/skilipi/Desktop/books"
-OUTPUT_DIR = "/home/skilipi/ai_rag_project/extracted_text"
+BOOKS_DIR = sys.argv[1] if len(sys.argv) > 1 else str(BASE_DIR / "docs")
+OUTPUT_DIR = str(BASE_DIR / "extracted_text")
 
 def extract_pdf(pdf_path, output_path):
     doc = fitz.open(pdf_path)

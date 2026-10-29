@@ -1,3 +1,2 @@
 bandit==1.9.4
 ruff==0.17.2
-semgrep==1.182.1

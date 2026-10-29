@@ -1,7 +1,8 @@
+from config import BASE_DIR
 import chromadb
 import ollama
 
-DB_DIR = "/home/skilipi/ai_rag_project/chroma_db"
+DB_DIR = str(BASE_DIR / "chroma_db")
 COLLECTION_NAME = "books"
 EMBED_MODEL = "nomic-embed-text"
 
